@@ -1,3 +1,14 @@
+<?php 
+
+session_start();
+	// cek apakah yang mengakses halaman ini sudah login
+
+	if($_SESSION['level']==""){
+		header("location:login.php?pesan=login_dulu_kakak^^");
+	}
+ 
+	?>
+
 <!DOCTYPE html>
 <html lang="en">
 
