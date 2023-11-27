@@ -1,3 +1,13 @@
+<?php 
+
+session_start();
+	// cek apakah yang mengakses halaman ini sudah login
+
+	if($_SESSION['level']==""){
+		header("location:login.php?pesan=login_dulu_kakak^^");
+	}
+ 
+	?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +42,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="supplier.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -44,7 +54,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.php">
+                <a class="nav-link" href="supplier.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -59,38 +69,25 @@
 
             <!-- Nav Item - Stock -->
             <li class="nav-item">
-                <a class="nav-link" href="stock.php">
+                <a class="nav-link" href="order_supplier.php">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Stock</span></a>
+                    <span>Order</span></a>
             </li>
 
             <!-- Nav Item - Orders -->
             <li class="nav-item">
-                <a class="nav-link" href="orders.php">
+                <a class="nav-link" href="stock_supplier.php">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Orders</span></a>
+                    <span>Stock</span></a>
             </li>
 
-                 <!-- Nav Item - Delivery -->
-                 <li class="nav-item">
-                <a class="nav-link" href="delivery.php">
+               <!-- Nav Item - Orders -->
+               <li class="nav-item">
+                <a class="nav-link" href="delivery_supplier.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Delivery</span></a>
             </li>
 
-                 <!-- Nav Item - Inventory Report -->
-                 <li class="nav-item">
-                <a class="nav-link" href="inventoryReport.php">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Inventory Report</span></a>
-            </li>
-
-                 <!-- Nav Item - Daily usage -->
-                 <li class="nav-item">
-                <a class="nav-link" href="dailyUsage.php">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Daily usage</span></a>
-            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -124,7 +121,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrator</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Supplier</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
